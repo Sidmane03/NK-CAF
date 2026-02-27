@@ -1,5 +1,6 @@
 import { Utensils, ShoppingBag, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router';
+import hero4 from "../assets/images/hero2.jpeg";
 
 export default function Home() {
   return (
@@ -20,11 +21,11 @@ export default function Home() {
           
           {/* Notice how these are now <Link> components! */}
           <div className="flex flex-wrap gap-4 pt-4">
-            <Link to="/bulkorder" className="btn-artisanal rounded-full px-8 py-4 text-lg">
-              Order Online <ShoppingBag className="w-5 h-5 ml-2" />
+            <Link to="/bulkorder" className="btn-artisanal rounded-full px-8 py-4 text-lg inline-flex items-center gap-2 hover:bg-amber-hover">
+              Order Online <ShoppingBag className="w-5 h-5" />
             </Link>
-            <Link to="/menu" className="btn-artisanal rounded-full px-8 py-4 text-lg bg-cream hover:bg-sand">
-              View Menu <ArrowRight className="w-5 h-5 ml-2" />
+            <Link to="/menu" className="btn-artisanal rounded-full px-8 py-4 text-lg bg-cream hover:bg-sand inline-flex items-center gap-2">
+              View Menu <ArrowRight className="w-5 h-5" />
             </Link>
           </div>
         </div>
@@ -32,13 +33,13 @@ export default function Home() {
         {/* Decorative Image Frame */}
         <div className="relative max-w-md mx-auto lg:ml-auto w-full mt-8 lg:mt-0">
           {/* Offset solid background */}
-          <div className="absolute inset-0 bg-amber rounded-[2rem] border-2 border-charcoal translate-x-6 translate-y-6"></div>
+          <div className="absolute inset-0 bg-amber rounded-4xl border-2 border-charcoal translate-x-6 translate-y-6"></div>
           {/* Main image container */}
-          <div className="relative bg-cream rounded-[2rem] border-2 border-charcoal overflow-hidden aspect-[4/5] shadow-hard-lg">
+          <div className="relative bg-cream rounded-4xl border-2 border-charcoal overflow-hidden aspect-4/5 shadow-hard-lg">
             <img 
-              src="/hero2.jpeg" 
+              src={hero4}
               alt="Delicious Food at Nikhil's Kitchen" 
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover"  
             />
           </div>
           {/* Floating Element */}

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { NavLink, Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
-import logo from "../../assets/icons/logo.png";
+import logo from "/src/assets/icons/logo.svg";  
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -29,7 +29,7 @@ const Navbar = () => {
         ${scrolled ? "py-3 shadow-sm" : "py-6"}
       `}
     >
-      <div className="max-w-6xl mx-auto px-6 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
 
         {/* Brand */}
         <Link to="/" className="flex items-center gap-3">
@@ -46,7 +46,7 @@ const Navbar = () => {
         </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-10 text-sm font-medium">
+        <nav className="hidden md:flex items-center gap-8 text-sm font-medium">
           <NavLink to="/" end className={linkStyles}>
             Home
           </NavLink>
@@ -62,7 +62,7 @@ const Navbar = () => {
 
           <NavLink 
             to="/bulkorder" 
-            className="btn-artisanal rounded-full px-6 py-2 ml-4"
+            className="btn-artisanal rounded-full px-6 py-2"
           > 
             Order Now 
           </NavLink>
@@ -73,7 +73,8 @@ const Navbar = () => {
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
           className="md:hidden p-2"
-          aria-label="Toggle Menu"
+          aria-expanded={mobileOpen}
+          aria-label={mobileOpen ? "Close menu" : "Open menu"}
         >
           {mobileOpen ? <X size={26} /> : <Menu size={26} />}
         </button>
@@ -82,8 +83,8 @@ const Navbar = () => {
       {/* Mobile Menu */}
       <div
         className={`
-          md:hidden overflow-hidden transition-all duration-300
-          ${mobileOpen ? "max-h-96 mt-4" : "max-h-0"}
+          md:hidden overflow-hidden transition-all duration-300 bg-sand/95 border-b border-charcoal/20
+          ${mobileOpen ? "max-h-96 opacity-100 mb-4" : "max-h-0 opacity-0 mb-0 border-transparent"}
         `}
       >
         <div className="px-6 pb-6 flex flex-col gap-6 text-sm font-medium">

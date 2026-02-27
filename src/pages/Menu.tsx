@@ -20,16 +20,16 @@ export default function Menu() {
                 {category.category}
               </h3>
               
-              <div className="space-y-4 grow">
+              <ul className="space-y-4 grow">
                 {category.items.map((item, itemIdx) => (
-                  <div key={itemIdx} className="flex justify-between items-baseline gap-4">
+                  <li key={itemIdx} className="flex justify-between items-baseline gap-4">
                     <span className="font-medium text-lg leading-tight">{item.name}</span>
                     {/* Dotted line connector */}
-                    <div className="grow border-b-2 border-dotted border-charcoal/30 relative top-[-6px]"></div>
+                    <div className="grow border-b-2 border-dotted border-charcoal/30 relative top-[-6px]" aria-hidden="true"></div>
                     <span className="font-bold whitespace-nowrap">₹ {item.price}</span>
-                  </div>
+                  </li>
                 ))}
-              </div>
+              </ul>
             </div>
           ))}
         </div>

@@ -25,10 +25,9 @@ export default function Contact() {
                 <div>
                   <h4 className="font-bold text-xl mb-2">Location</h4>
                   <p className="opacity-80 leading-relaxed">
-                    Shop No. 4, Ground Floor,<br/>
-                    Sai Heritage Building,<br/>
-                    Near Main Market, Pimpri-Chinchwad,<br/>
-                    Pune, Maharashtra 411018
+                    LA CASITA, Survey No. 32 A, LC,<br />
+                    1/1, Shop No. 19, Sector 29, Ravet,<br />
+                    Pune, Maharashtra 412101
                   </p>
                 </div>
               </div>
@@ -61,8 +60,8 @@ export default function Contact() {
                 <div>
                   <h4 className="font-bold text-xl mb-2">Phone</h4>
                   <p className="opacity-80 leading-relaxed">
-                    <a href="tel:+919876543210" className="hover:text-amber transition-colors">
-                      +91 98765 43210
+                    <a href="tel:+917499059843" className="hover:text-amber transition-colors">
+                      +91 74990 59843
                     </a>
                   </p>
                 </div>
