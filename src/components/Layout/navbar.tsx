@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react";
 import { NavLink, Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
-import logo from "/src/assets/icons/logo.svg";  
+
+import logo from "../../assets/icons/logo.svg";
+
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -47,21 +49,21 @@ const Navbar = () => {
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-8 text-sm font-medium">
-          <NavLink to="/" end className={linkStyles}>
+          <a href="/#home" className="text-charcoal hover:text-amber transition-colors duration-200">
             Home
-          </NavLink>
+          </a>
           <NavLink to="/menu" className={linkStyles}>
             Menu
           </NavLink>
-          <NavLink to="/about" className={linkStyles}>
-            About
-          </NavLink>
+          <a href="/#about" className="text-charcoal hover:text-amber transition-colors duration-200">
+            Testimonials
+          </a>
           <NavLink to="/contact" className={linkStyles}>
             Contact
           </NavLink>
 
           <NavLink 
-            to="/bulkorder" 
+            to="/order" 
             className="btn-artisanal rounded-full px-6 py-2"
           > 
             Order Now 
@@ -88,26 +90,26 @@ const Navbar = () => {
         `}
       >
         <div className="px-6 pb-6 flex flex-col gap-6 text-sm font-medium">
-          <NavLink to="/" end onClick={() => setMobileOpen(false)} className={linkStyles}>
+          <a href="/#home" onClick={() => setMobileOpen(false)} className="text-charcoal hover:text-amber transition-colors duration-200">
             Home
-          </NavLink>
+          </a>
           <NavLink to="/menu" onClick={() => setMobileOpen(false)} className={linkStyles}>
             Menu
           </NavLink>
-          <NavLink to="/about" onClick={() => setMobileOpen(false)} className={linkStyles}>
-            About
-          </NavLink>
+          <a href="/#about" onClick={() => setMobileOpen(false)} className="text-charcoal hover:text-amber transition-colors duration-200">
+            Testimonials
+          </a>
           <NavLink to="/contact" onClick={() => setMobileOpen(false)} className={linkStyles}>
             Contact
           </NavLink>
 
-          <NavLink
-            to="/bulkorder"
+          <a
+            href="/order"
             onClick={() => setMobileOpen(false)}
             className="btn-artisanal mt-2 px-5 py-2 w-full text-center"
           >
-            Bulk Order
-          </NavLink>
+            Order Online
+          </a>
         </div>
       </div>
     </header>

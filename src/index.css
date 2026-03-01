@@ -11,16 +11,27 @@
   --color-amber: #E88D41;
   --color-amber-hover: #D67A30;
   --color-charcoal: #302D2A;
+  --color-espresso: #1B1816; /* Deep roast color for contrast */
   
   /* Muted Accents from Products */
   --color-muted-teal: #85AFA8;
   --color-muted-purple: #9A8EAB;
   --color-muted-blue: #8A9BB4;
 
-  /* Hard Shadows (Neo-brutalist style) */
-  --shadow-hard: 4px 4px 0px #302D2A;
-  --shadow-hard-sm: 2px 2px 0px #302D2A;
-  --shadow-hard-lg: 8px 8px 0px #302D2A;
+  /* Hard Shadows (Neo-brutalist style) - Softened with opacity */
+  --shadow-hard: 4px 4px 0px rgba(48, 45, 42, 0.4);
+  --shadow-hard-sm: 2px 2px 0px rgba(48, 45, 42, 0.5);
+  --shadow-hard-lg: 8px 8px 0px rgba(48, 45, 42, 0.3);
+
+    --color-zomato: #E23744;
+  --color-zomato-hover: #D94148;
+  --color-swiggy: #FC8019;
+  --color-swiggy-hover: #FF5200;
+
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 @layer base {
@@ -29,6 +40,20 @@
   }
   h1, h2, h3, h4, h5, h6 {
     @apply font-serif text-charcoal;
+  }
+}
+
+@layer utilities {
+  .reveal {
+    opacity: 0;
+    transform: translateY(60px) scale(0.95);
+    transition: all 1.4s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: transform, opacity;
+  }
+  
+  .reveal.active {
+    opacity: 1;
+    transform: translateY(0) scale(1);
   }
 }
 
@@ -46,3 +71,4 @@
     @apply inline-flex items-center justify-center bg-amber text-charcoal border-2 border-charcoal font-medium shadow-hard transition-all active:translate-x-1 active:translate-y-1 active:shadow-none;
   }
 }
+

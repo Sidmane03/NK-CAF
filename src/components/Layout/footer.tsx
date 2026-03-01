@@ -1,18 +1,23 @@
+
 import { Phone, MapPin } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import logo from '../../assets/icons/logo.svg';
 
 const Footer = () => {
   return (
-    <footer className="bg-charcoal text-cream py-16 px-6 border-t-4 border-amber">
+    <footer className="bg-espresso text-sand/90 py-20 px-6 border-t-2 border-charcoal">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 items-start">
         {/* Brand */}
         <div className="flex flex-col gap-4">
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-amber border-2 border-cream rounded-full flex items-center justify-center text-charcoal font-serif font-bold text-xl">
-              N
-            </div>
+          
+          <Link to="/" className="flex items-center gap-3">
+          <img
+            src={logo}
+            alt="Nikhil's Kitchen Logo"
+            className="h-10"
+          />
             <span className="font-serif text-2xl font-bold tracking-tight">Nikhil's Kitchen</span>
-          </div>
+          </Link>
           <p className="opacity-80 max-w-sm">
             Experience the finest street food and cafe classics crafted with love, serving our community every day.
           </p>
@@ -24,8 +29,8 @@ const Footer = () => {
           <nav className="flex flex-col gap-2">
             <Link to="/" className="hover:text-amber transition-colors w-fit">Home</Link>
             <Link to="/menu" className="hover:text-amber transition-colors w-fit">Menu</Link>
-            <Link to="/about" className="hover:text-amber transition-colors w-fit">About Us</Link>
-            <Link to="/bulkorder" className="hover:text-amber transition-colors w-fit">Bulk Orders</Link>
+            <Link to="/about" className="hover:text-amber transition-colors w-fit">Testimonials</Link>
+            <Link to="/order" className="hover:text-amber transition-colors w-fit">Order Online</Link>
           </nav>
         </div>
 

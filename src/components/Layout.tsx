@@ -1,6 +1,7 @@
 import { Outlet } from 'react-router';
-import Navbar from './Layout/navbar'; // Adjust the import path if needed
-import Footer from './Layout/footer'; // Adjust the import path if needed
+import Navbar from './Layout/navbar'; 
+import Footer from './Layout/footer'; 
+import BackToTop from './BackToTop';
 
 export default function Layout() {
   return (
@@ -12,6 +13,7 @@ export default function Layout() {
       </main>
 
       <Footer />
+      <BackToTop />
     </div>
   );
 }

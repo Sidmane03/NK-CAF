@@ -1,4 +1,4 @@
-import { MessageCircle, Info } from 'lucide-react';
+import { Info, MessageCircle } from 'lucide-react';
 
 interface BulkOrderItem {
   id: string;
@@ -14,53 +14,44 @@ const bulkOrderItems: BulkOrderItem[] = [
     title: 'PAV BHAJI',
     description: 'Our signature buttery pav bhaji served in party-sized portions. Includes extra pav, onions, and lemon slices.',
     price: 'Starts at ₹1,500 (Serves 10-15)',
-    image: '/pav-bhaji-bulk.png'
+    image: '/pav_bhaji_bulk_1772195224638.png'
   },
   {
     id: 'pulao',
     title: 'PULAO',
     description: 'Fragrant and spicy Tawa Pulao loaded with fresh seasonal vegetables and authentic spices.',
     price: 'Starts at ₹1,200 (Serves 10-15)',
-    image: '/tawa-pulao-bulk.png'
+    image: '/tawa_pulao_bulk_1772195241250.png'
   },
   {
     id: 'sandwich',
     title: 'SANDWICH',
     description: 'A grand platter of our best-selling Grilled Sandwiches, perfectly sliced for easy serving.',
     price: 'Starts at ₹1,800 (Platter of 20)',
-    image: '/sandwich-bulk.png'
+    image: '/sandwich_platter_bulk_1772195257448.png'
   }
 ];
 
 export default function Bulkorder() {
-  const whatsappNumber = "+919876543210";
+  const whatsappNumber = "+917499059843";
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=Hi Nikhil's Kitchen, I'm interested in placing a bulk order.`;
 
   return (
-    <div className="min-h-screen bg-cream">
+    <div className="w-full">
       {/* Hero Section */}
-      <section className="relative py-20 md:py-32 px-6 overflow-hidden border-b-2 border-charcoal/10">
+      <section className="relative py-12 md:py-20 px-6 overflow-hidden">
         <div className="max-w-7xl mx-auto text-center relative z-10">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border-2 border-charcoal bg-sand font-bold text-sm shadow-hard-sm mb-8 animate-fade-in">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border-2 border-charcoal bg-sand font-bold text-sm shadow-hard-sm mb-6 animate-fade-in">
             <Info className="w-4 h-4 text-amber" />
             Perfect for Parties & Events
           </div>
           <h1 className="text-5xl md:text-8xl font-serif font-medium leading-tight mb-6">
             Bulk Order – <span className="text-amber">Nikhil’s Kitchen</span>
           </h1>
-          <p className="text-lg md:text-2xl opacity-80 max-w-3xl mx-auto leading-relaxed mb-10">
+          <p className="text-lg md:text-xl opacity-80 max-w-2xl mx-auto leading-relaxed">
             Make your celebrations memorable with the authentic flavors of Nikhil’s Kitchen. 
             From corporate lunches to family gatherings, we cater to all your needs with love and care.
           </p>
-          <a 
-            href={whatsappLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-artisanal rounded-full px-10 py-5 text-xl font-bold group"
-          >
-            Inquire via WhatsApp 
-            <MessageCircle className="w-6 h-6 ml-3 group-hover:scale-110 transition-transform" />
-          </a>
         </div>
         
         {/* Decorative elements */}
@@ -121,7 +112,7 @@ export default function Bulkorder() {
               </a>
               <div className="flex flex-col items-center md:items-start">
                 <span className="text-sm opacity-60 uppercase tracking-widest font-bold">Call us directly</span>
-                <span className="text-2xl font-serif font-medium text-amber-hover">+91 98765 43210</span>
+                <span className="text-2xl font-serif font-medium text-amber-hover">+91 74990 59843</span>
               </div>
             </div>
           </div>

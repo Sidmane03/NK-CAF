@@ -1,7 +1,21 @@
-const menuData = [
-    {
-      category: "Burgers",
-      items: [
+export interface MenuItem {
+  name: string;
+  price: string;
+}
+
+export interface MenuCategory {
+  category: string;
+  image?: string; // Optional: Add a "?" so it doesn't break if an image is missing!
+  items: MenuItem [];
+
+}
+
+
+const menuData: MenuCategory[] = [
+  {
+    category: "Burgers",
+    image: "src/assets/images/burger.png",
+    items: [
         { name: "Veg. Burger", price: "120.00" },
         { name: "Veg. Cheese Burger", price: "150.00" },
         { name: "Paneer Cheese Burger", price: "180.00" }
@@ -9,6 +23,7 @@ const menuData = [
     },
     {
       category: "Chill Mojito & Ice Tea",
+      image: "src/assets/images/mojito.png",
       items: [
         { name: "Kiwi Mojito", price: "150.00" },
         { name: "Dashing Blue", price: "140.00" },
@@ -18,6 +33,7 @@ const menuData = [
     },
     {
       category: "Pizza",
+      image: "src/assets/images/pizza.png",
       items: [
         { name: "Cheese Corn", price: "270.00" },
         { name: "Paneer Tikka", price: "320.00" },
