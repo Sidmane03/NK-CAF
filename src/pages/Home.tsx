@@ -17,8 +17,8 @@ export default function Home() {
               Welcome to Nikhil's Kitchen
             </div>
             <h1 className="text-5xl md:text-7xl font-serif font-medium leading-[1.1]">
-              The Perfect Blend of <br/>
-              <span className="text-amber">Taste & Comfort</span>
+              The Flavours That Bring You  <span className="text-amber">Home</span> <br/>
+              {/* <span className="text-amber">Taste & Comfort</span> */}
             </h1>
             <p className="text-lg md:text-xl text-espresso/80 leading-relaxed max-w-lg">
               From sizzling Pav Bhaji to refreshing Mojitos, experience the finest street food and cafe classics crafted with love.
@@ -37,12 +37,15 @@ export default function Home() {
           {/* Decorative Image Frame */}
           <Reveal className="relative max-w-md mx-auto lg:ml-auto w-full mt-8 lg:mt-0" threshold={0.05}>
             {/* Offset solid background */}
-            <div className="absolute inset-0 bg-amber rounded-4xl border-2 border-charcoal translate-x-6 translate-y-6"></div>
+            <div className="absolute inset-0 bg-amber rounded-4xl border-2 border-charcoal translate-x-6 translate-y-6" aria-hidden="true"></div>
             {/* Main image container */}
             <div className="relative bg-cream rounded-4xl border-2 border-charcoal overflow-hidden aspect-4/5 shadow-hard-lg">
               <img 
                 src={hero4}
                 alt="Delicious Food at Nikhil's Kitchen" 
+                width={448}
+                height={560}
+                fetchPriority="high"
                 className="w-full h-full object-cover"  
               />
             </div>
@@ -63,7 +66,7 @@ export default function Home() {
       {/* Bulk Order Section */}
       <section id="bulkorder" className="relative group overflow-hidden pt-24 md:pt-32">
         {/* Slow Reveal Transition Div */}
-        <div className="absolute top-0 left-0 w-full h-32 bg-linear-to-b from-cream to-transparent z-10 pointer-events-none" />
+        <div className="absolute top-0 left-0 w-full h-32 bg-linear-to-b from-cream to-transparent z-10 pointer-events-none" aria-hidden="true" />
         <Reveal threshold={0.15}>
           <Bulkorder />
         </Reveal>
@@ -71,7 +74,7 @@ export default function Home() {
 
       {/* About Section */}
       <section id="about" className="relative pt-24 md:pt-32">
-        <div className="absolute top-0 left-0 w-full h-32 bg-linear-to-b from-cream to-transparent z-10 pointer-events-none" />
+        <div className="absolute top-0 left-0 w-full h-32 bg-linear-to-b from-cream to-transparent z-10 pointer-events-none" aria-hidden="true" />
         <Reveal threshold={0.15}>
           <About />
         </Reveal>

@@ -55,6 +55,14 @@ html {
     opacity: 1;
     transform: translateY(0) scale(1);
   }
+
+  @media (prefers-reduced-motion: reduce) {
+    .reveal {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+  }
 }
 
 /* Custom utilities for the specific input style */

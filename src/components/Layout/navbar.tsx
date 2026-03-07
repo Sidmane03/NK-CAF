@@ -76,7 +76,8 @@ const Navbar = () => {
           onClick={() => setMobileOpen(!mobileOpen)}
           className="md:hidden p-2"
           aria-expanded={mobileOpen}
-          aria-label={mobileOpen ? "Close menu" : "Open menu"}
+          aria-controls="mobile-menu"
+          aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
         >
           {mobileOpen ? <X size={26} /> : <Menu size={26} />}
         </button>
@@ -84,9 +85,10 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       <div
+        id="mobile-menu"
         className={`
           md:hidden overflow-hidden transition-all duration-300 bg-sand/95 border-b border-charcoal/20
-          ${mobileOpen ? "max-h-96 opacity-100 mb-4" : "max-h-0 opacity-0 mb-0 border-transparent"}
+          ${mobileOpen ? 'max-h-96 opacity-100 mb-4' : 'max-h-0 opacity-0 mb-0 border-transparent'}
         `}
       >
         <div className="px-6 pb-6 flex flex-col gap-6 text-sm font-medium">
@@ -103,13 +105,13 @@ const Navbar = () => {
             Contact
           </NavLink>
 
-          <a
-            href="/order"
+          <NavLink
+            to="/order"
             onClick={() => setMobileOpen(false)}
             className="btn-artisanal mt-2 px-5 py-2 w-full text-center"
           >
             Order Online
-          </a>
+          </NavLink>
         </div>
       </div>
     </header>

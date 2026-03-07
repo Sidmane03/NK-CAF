@@ -5,7 +5,7 @@ import BackToTop from './BackToTop';
 
 export default function Layout() {
   return (
-    <div className="min-h-screen bg-cream font-sans text-charcoal flex flex-col">
+    <div className="min-h-screen flex flex-col">
       <Navbar />
       {/* Main Content Area - Outlet injects the current page here */}
       <main className="grow">

@@ -29,7 +29,7 @@ const Footer = () => {
           <nav className="flex flex-col gap-2">
             <Link to="/" className="hover:text-amber transition-colors w-fit">Home</Link>
             <Link to="/menu" className="hover:text-amber transition-colors w-fit">Menu</Link>
-            <Link to="/about" className="hover:text-amber transition-colors w-fit">Testimonials</Link>
+            <Link to="/#about" className="hover:text-amber transition-colors w-fit">Testimonials</Link>
             <Link to="/order" className="hover:text-amber transition-colors w-fit">Order Online</Link>
           </nav>
         </div>
@@ -37,7 +37,7 @@ const Footer = () => {
         {/* Contact */}
         <div className="flex flex-col gap-4">
           <h4 className="font-serif text-xl font-bold text-amber">Visit Us</h4>
-          <a href="tel:+919876543210" className="opacity-90 hover:text-amber transition-colors flex items-center gap-3 w-fit">
+          <a href="tel:+917499059843" className="opacity-90 hover:text-amber transition-colors flex items-center gap-3 w-fit">
             <Phone className="w-5 h-5" /> +91 74990 59843
           </a>
           <div className="opacity-90 flex items-start gap-3">

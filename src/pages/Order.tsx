@@ -24,6 +24,7 @@ export default function Order() {
             href="https://www.zomato.com/pune/nikhils-kitchen-pav-bhaji-caf%C3%A9-ravet" 
             target="_blank" 
             rel="noopener noreferrer"
+            aria-label="Order Nikhil's Kitchen food on Zomato"
             className="flex-1 bg-cream border-4 border-charcoal rounded-3xl p-8 flex flex-col items-center justify-between gap-10 shadow-hard hover:shadow-hard-lg hover:-translate-y-2 transition-all duration-300 group"
             >
             {/* Zomato Logo */}
@@ -41,6 +42,7 @@ export default function Order() {
             href="https://www.swiggy.com/restaurants/nikhils-kitchen-pav-bhaji-and-cafe-akurdi-ravet-pune-377187" 
             target="_blank" 
             rel="noopener noreferrer"
+            aria-label="Order Nikhil's Kitchen food on Swiggy"
             className="flex-1 bg-cream border-4 border-charcoal rounded-3xl p-8 flex flex-col items-center justify-between gap-10 shadow-hard hover:shadow-hard-lg hover:-translate-y-2 transition-all duration-300 group"
             >
             {/* Swiggy Logo */}

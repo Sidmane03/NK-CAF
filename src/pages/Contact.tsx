@@ -1,86 +1,98 @@
-import { MapPin, Clock, Phone } from 'lucide-react';
+import { MapPin, Clock, Phone, ExternalLink } from 'lucide-react';
+import SectionHeader from '../components/SectionHeader';
+import ContactInfoBlock from '../components/ContactInfoBlock';
 
 export default function Contact() {
-  return (
-    <section className="py-20 px-6 bg-cream min-h-screen">
-      <div className="max-w-5xl mx-auto">
-        
-        {/* Added a page header to match the Menu page styling */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-serif font-medium mb-4">Contact & Visit Us</h2>
-          <p className="text-lg opacity-80 max-w-2xl mx-auto">
-            Drop by to enjoy our cozy ambiance and delicious food. We can't wait to host you!
-          </p>
-        </div>
+  const mapEmbedUrl = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3780.4688662437698!2d73.7562064!3d18.6429446!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2b98295527b1d%3A0x6205cf7a13870c80!2sNikhil&#39;s%20Kitchen%20Pav%20Bhaji%20%26%20Cafe!5e0!3m2!1sen!2sin!4v1772827324332!5m2!1sen!2sin";
+  const googleMapsUrl = "https://www.google.com/maps/place/Nikhil's+Kitchen+Pav+Bhaji+%26+Cafe/@18.6429446,73.7562064,17z/data=!4m6!3m5!1s0x3bc2b98295527b1d:0x6205cf7a13870c80!8m2!3d18.6429446!4d73.7562064!16s%2Fg%2F11y3lypzkv?entry=ttu";
 
-        <div className="card-artisanal p-8 md:p-12 bg-sand flex flex-col md:flex-row gap-12 items-center">
+  return (
+    <section className="relative py-20 px-6 bg-cream min-h-screen overflow-hidden">
+      {/* Background Texture Overlay */}
+      <div 
+        className="absolute inset-0 opacity-[0.03] pointer-events-none" 
+        style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23302D2A' fill-opacity='1' fill-rule='evenodd'%3E%3Ccircle cx='3' cy='3' r='1.5'/%3E%3C/g%3E%3C/svg%3E")` }}
+        aria-hidden="true"
+      ></div>
+
+      <div className="max-w-5xl mx-auto relative z-10">
+        <SectionHeader
+          title="Contact & Visit Us"
+          subtitle="Drop by to enjoy our cozy ambiance and delicious food. We can't wait to host you!"
+        />
+
+        <div className="card-artisanal p-8 md:p-12 bg-sand/50 backdrop-blur-sm flex flex-col md:flex-row gap-12 items-center">
           <div className="flex-1 space-y-8">
             <div className="space-y-6">
-              
+
               {/* Location Block */}
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-full bg-amber border-2 border-charcoal shadow-hard-sm flex items-center justify-center shrink-0 mt-1">
-                  <MapPin className="w-6 h-6 text-charcoal" />
-                </div>
-                <div>
-                  <h4 className="font-bold text-xl mb-2">Location</h4>
-                  <p className="opacity-80 leading-relaxed">
-                    LA CASITA, Survey No. 32 A, LC,<br />
-                    1/1, Shop No. 19, Sector 29, Ravet,<br />
-                    Pune, Maharashtra 412101
-                  </p>
-                </div>
-              </div>
+              <ContactInfoBlock icon={<MapPin className="w-6 h-6 text-charcoal" />} title="Location">
+                <p className="opacity-80 leading-relaxed mb-4">
+                  LA CASITA, Survey No. 32 A, LC,<br />
+                  1/1, Shop No. 19, Sector 29, Ravet,<br />
+                  Pune, Maharashtra 412101
+                </p>
+                <a 
+                  href={googleMapsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 font-bold text-amber hover:text-amber-hover transition-colors group"
+                >
+                  Get Directions
+                  <ExternalLink className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                </a>
+              </ContactInfoBlock>
 
               {/* Opening Hours Block */}
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-full bg-amber border-2 border-charcoal shadow-hard-sm flex items-center justify-center shrink-0 mt-1">
-                  <Clock className="w-6 h-6 text-charcoal" />
-                </div>
-                <div className="w-full">
-                  <h4 className="font-bold text-xl mb-2">Opening Hours</h4>
-                  <div className="space-y-2 opacity-80 w-full max-w-xs">
-                    <div className="flex justify-between border-b border-charcoal/20 pb-1">
-                      <span>Monday - Sunday</span>
-                      <span className="font-medium">9:00 AM - 10:30 PM</span>
-                    </div>
-                    <div className="flex justify-between pt-1">
-                      <span>Wednesday</span>
-                      <span className="font-medium">9:00 AM - 10:30 PM</span>
-                    </div>
+              <ContactInfoBlock icon={<Clock className="w-6 h-6 text-charcoal" />} title="Opening Hours">
+                <div className="space-y-2 opacity-80 max-w-xs">
+                  <div className="flex justify-between border-b border-charcoal/20 pb-1">
+                    <span>Monday - Sunday</span>
+                    <span className="font-medium">9:00 AM - 10:30 PM</span>
+                  </div>
+                  <div className="flex justify-between pt-1">
+                    <span>Wednesday</span>
+                    <span className="font-medium">9:00 AM - 10:30 PM</span>
                   </div>
                 </div>
-              </div>
+              </ContactInfoBlock>
 
-              {/* Phone Block (Added for the Contact page context) */}
-              <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-full bg-amber border-2 border-charcoal shadow-hard-sm flex items-center justify-center shrink-0 mt-1">
-                  <Phone className="w-6 h-6 text-charcoal" />
-                </div>
-                <div>
-                  <h4 className="font-bold text-xl mb-2">Phone</h4>
-                  <p className="opacity-80 leading-relaxed">
-                    <a href="tel:+917499059843" className="hover:text-amber transition-colors">
-                      +91 74990 59843
-                    </a>
-                  </p>
-                </div>
-              </div>
+              {/* Phone Block */}
+              <ContactInfoBlock icon={<Phone className="w-6 h-6 text-charcoal" />} title="Phone">
+                <p className="opacity-80 leading-relaxed text-xl">
+                  <a href="tel:+917499059843" className="hover:text-amber transition-colors font-serif italic">
+                    +91 74990 59843
+                  </a>
+                </p>
+              </ContactInfoBlock>
 
             </div>
           </div>
 
-          {/* Decorative Map/Image Area */}
+          {/* Map Area */}
           <div className="flex-1 w-full">
-            <div className="relative w-full aspect-square max-w-sm mx-auto">
-              <div className="absolute inset-0 bg-muted-teal rounded-full border-2 border-charcoal translate-x-4 translate-y-4"></div>
-              <div className="relative bg-cream rounded-full border-2 border-charcoal overflow-hidden w-full h-full shadow-hard flex items-center justify-center">
-                {/* Absolute path applied to the image */}
-                <img 
-                  src="/hero4.avif" 
-                  alt="Cafe Exterior" 
-                  className="w-full h-full object-cover"
-                />
+            <div className="relative w-full aspect-square max-w-sm mx-auto group">
+              {/* Background circular highlight */}
+              <div className="absolute inset-0 bg-muted-teal/30 rounded-full border-2 border-charcoal/20 transition-transform duration-500 group-hover:scale-105" aria-hidden="true"></div>
+              
+              {/* Main Circular Map Container */}
+              <div className="relative bg-cream rounded-full border-2 border-charcoal overflow-hidden w-full h-full shadow-hard transition-transform duration-500 group-hover:-translate-y-2 group-hover:shadow-hard-lg">
+                <iframe
+                  src={mapEmbedUrl}
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0, filter: 'grayscale(0.2) contrast(1.1) brightness(0.95)' }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Nikhil's Kitchen Google Maps Location"
+                  className="w-full h-full"
+                ></iframe>
+              </div>
+              
+              {/* Floating Map Label */}
+              <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 bg-charcoal text-white px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest border-2 border-cream shadow-hard-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                View Location
               </div>
             </div>
           </div>
