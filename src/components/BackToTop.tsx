@@ -5,15 +5,9 @@ export default function BackToTop() {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    const toggleVisibility = () => {
-      if (window.scrollY > 300) {
-        setIsVisible(true);
-      } else {
-        setIsVisible(false);
-      }
-    };
-
-    window.addEventListener('scroll', toggleVisibility);
+    const toggleVisibility = () => setIsVisible(window.scrollY > 300);
+    // passive: true — browser can scroll without waiting on JS
+    window.addEventListener('scroll', toggleVisibility, { passive: true });
     return () => window.removeEventListener('scroll', toggleVisibility);
   }, []);
 
@@ -38,7 +32,7 @@ export default function BackToTop() {
       `}
       aria-label="Back to top"
     >
-      <ArrowUp size={24} />
+      <ArrowUp size={24} aria-hidden="true" />
     </button>
   );
 }

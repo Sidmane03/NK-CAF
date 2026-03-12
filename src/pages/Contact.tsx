@@ -46,13 +46,9 @@ export default function Contact() {
               {/* Opening Hours Block */}
               <ContactInfoBlock icon={<Clock className="w-6 h-6 text-charcoal" />} title="Opening Hours">
                 <div className="space-y-2 opacity-80 max-w-xs">
-                  <div className="flex justify-between border-b border-charcoal/20 pb-1">
-                    <span>Monday - Sunday</span>
-                    <span className="font-medium">9:00 AM - 10:30 PM</span>
-                  </div>
-                  <div className="flex justify-between pt-1">
-                    <span>Wednesday</span>
-                    <span className="font-medium">9:00 AM - 10:30 PM</span>
+                  <div className="flex justify-between">
+                    <span>Monday – Sunday</span>
+                    <span className="font-medium">9:00 AM – 10:30 PM</span>
                   </div>
                 </div>
               </ContactInfoBlock>

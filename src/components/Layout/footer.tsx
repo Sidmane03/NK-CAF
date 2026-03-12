@@ -29,7 +29,7 @@ const Footer = () => {
           <nav className="flex flex-col gap-2">
             <Link to="/" className="hover:text-amber transition-colors w-fit">Home</Link>
             <Link to="/menu" className="hover:text-amber transition-colors w-fit">Menu</Link>
-            <Link to="/#about" className="hover:text-amber transition-colors w-fit">Testimonials</Link>
+            <Link to="/#testimonials" className="hover:text-amber transition-colors w-fit">Testimonials</Link>
             <Link to="/order" className="hover:text-amber transition-colors w-fit">Order Online</Link>
           </nav>
         </div>

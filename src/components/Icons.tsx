@@ -10,7 +10,8 @@ export const ZomatoIcon = ({ className }: IconProps) => (
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 563.88 173.587"
     fill="currentColor"
-    aria-label="Zomato"
+    aria-hidden="true"
+    focusable="false"
   >
  <g transform="matrix(1.3333333,0,0,-1.3333333,0,173.58667)" id="g10">
       <g transform="scale(0.1)" id="g12">
@@ -47,7 +48,8 @@ export const SwiggyIcon = ({ className }: IconProps) => (
     viewBox="0 0 159 49"
     xmlns="http://www.w3.org/2000/svg"
     fill="#FF5200"
-    aria-label="Swiggy"
+    aria-hidden="true"
+    focusable="false"
   >
     <path
       fill="#FE5005"

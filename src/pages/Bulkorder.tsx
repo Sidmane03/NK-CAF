@@ -1,5 +1,8 @@
 import { Info, MessageCircle } from 'lucide-react';
 import BulkOrderCard from '../components/BulkOrderCard';
+import sandwichImg from "../assets/images/sandwhich.avif";
+import pulaoImg from "../assets/images/pulao.avif";
+import pavBhajiImg from "../assets/images/pavbhaji.avif";
 
 interface BulkOrderItem {
   id: string;
@@ -15,21 +18,21 @@ const bulkOrderItems: BulkOrderItem[] = [
     title: 'PAV BHAJI',
     description: 'Our signature buttery pav bhaji served in party-sized portions. Includes extra pav, onions, and lemon slices.',
     price: 'Starts at ₹1,500 (Serves 10-15)',
-    image: '/pav_bhaji_bulk_1772195224638.png',
+    image: pavBhajiImg,
   },
   {
     id: 'pulao',
     title: 'PULAO',
     description: 'Fragrant and spicy Tawa Pulao loaded with fresh seasonal vegetables and authentic spices.',
     price: 'Starts at ₹1,200 (Serves 10-15)',
-    image: '/tawa_pulao_bulk_1772195241250.png',
+    image: pulaoImg,
   },
   {
     id: 'sandwich',
     title: 'SANDWICH',
     description: 'A grand platter of our best-selling Grilled Sandwiches, perfectly sliced for easy serving.',
     price: 'Starts at ₹1,800 (Platter of 20)',
-    image: '/sandwich_platter_bulk_1772195257448.png',
+    image: sandwichImg,
   },
 ];
 
@@ -46,9 +49,9 @@ export default function Bulkorder() {
             <Info className="w-4 h-4 text-amber" aria-hidden="true" />
             Perfect for Parties & Events
           </div>
-          <h1 className="text-5xl md:text-8xl font-serif font-medium leading-tight mb-6">
+          <h2 className="text-5xl md:text-8xl font-serif font-medium leading-tight mb-6">
             Bulk Order – <span className="text-amber">Nikhil's Kitchen</span>
-          </h1>
+          </h2>
           <p className="text-lg md:text-xl opacity-80 max-w-2xl mx-auto leading-relaxed">
             Make your celebrations memorable with the authentic flavors of Nikhil's Kitchen.
             From corporate lunches to family gatherings, we cater to all your needs with love and care.

@@ -1,33 +1,33 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600&display=swap');
+/* Fonts are loaded via <link> in index.html — no render-blocking @import needed */
 @import "tailwindcss";
 
 @theme {
   --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
   --font-serif: "Fraunces", ui-serif, Georgia, serif;
-  
-  /* Extracted Color Palette */
+
+  /* Color Palette */
   --color-cream: #F9F6F0;
   --color-sand: #EBE3D5;
   --color-amber: #E88D41;
   --color-amber-hover: #D67A30;
   --color-charcoal: #302D2A;
-  --color-espresso: #1B1816; /* Deep roast color for contrast */
-  
-  /* Muted Accents from Products */
+  --color-espresso: #1B1816;
+
+  /* Muted Accents */
   --color-muted-teal: #85AFA8;
   --color-muted-purple: #9A8EAB;
   --color-muted-blue: #8A9BB4;
 
-  /* Hard Shadows (Neo-brutalist style) - Softened with opacity */
+  /* Hard Shadows (Neo-brutalist style) */
   --shadow-hard: 4px 4px 0px rgba(48, 45, 42, 0.4);
   --shadow-hard-sm: 2px 2px 0px rgba(48, 45, 42, 0.5);
   --shadow-hard-lg: 8px 8px 0px rgba(48, 45, 42, 0.3);
 
-    --color-zomato: #E23744;
+  /* Delivery platform brand colors */
+  --color-zomato: #E23744;
   --color-zomato-hover: #D94148;
   --color-swiggy: #FC8019;
   --color-swiggy-hover: #FF5200;
-
 }
 
 html {
@@ -44,18 +44,17 @@ html {
 }
 
 @layer utilities {
+  /* Scroll-reveal animation */
   .reveal {
     opacity: 0;
     transform: translateY(60px) scale(0.95);
     transition: all 1.4s cubic-bezier(0.22, 1, 0.36, 1);
     will-change: transform, opacity;
   }
-  
   .reveal.active {
     opacity: 1;
     transform: translateY(0) scale(1);
   }
-
   @media (prefers-reduced-motion: reduce) {
     .reveal {
       opacity: 1;
@@ -63,20 +62,34 @@ html {
       transition: none;
     }
   }
-}
 
-/* Custom utilities for the specific input style */
-@layer utilities {
+  /* Artisanal design system utilities */
   .input-artisanal {
     @apply bg-transparent border-0 border-b-2 border-charcoal rounded-none px-0 py-2 focus:ring-0 focus:border-amber transition-colors outline-none w-full placeholder:text-charcoal/50;
   }
-  
   .card-artisanal {
     @apply bg-cream border-2 border-charcoal rounded-xl shadow-hard transition-transform hover:-translate-y-1 hover:shadow-hard-lg;
   }
-
   .btn-artisanal {
     @apply inline-flex items-center justify-center bg-amber text-charcoal border-2 border-charcoal font-medium shadow-hard transition-all active:translate-x-1 active:translate-y-1 active:shadow-none;
   }
-}
 
+  /* Custom scrollbar for menu cards */
+  .menu-scrollbar::-webkit-scrollbar {
+    width: 6px;
+  }
+  .menu-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .menu-scrollbar::-webkit-scrollbar-thumb {
+    background-color: rgba(48, 45, 42, 0.2);
+    border-radius: 3px;
+  }
+  .menu-scrollbar::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(232, 141, 65, 0.5);
+  }
+  .menu-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(48, 45, 42, 0.2) transparent;
+  }
+}

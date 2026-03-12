@@ -1,6 +1,6 @@
 import { Utensils, ShoppingBag, ArrowRight } from 'lucide-react';
-import { Link } from 'react-router';
-import hero4 from "../assets/images/hero2.jpeg";
+import { Link } from 'react-router-dom';
+import hero4 from "../assets/images/hero2.avif";
 import Bulkorder from './Bulkorder';
 import About from './About';
 import Reveal from '../components/Reveal';
@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
-      <section id="home" className="min-h-[calc(100vh-80px)] flex items-center py-16 md:py-24 px-6 overflow-hidden relative">
+      <section id="home" className="min-h-[calc(100vh-80px)] flex items-center py-16 md:py-24 px-6 overflow-hidden relative scroll-mt-24">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center w-full">
           <Reveal className="space-y-8 z-10" threshold={0.05}>
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border-2 border-charcoal bg-cream font-bold text-sm shadow-hard-sm">
@@ -17,8 +17,7 @@ export default function Home() {
               Welcome to Nikhil's Kitchen
             </div>
             <h1 className="text-5xl md:text-7xl font-serif font-medium leading-[1.1]">
-              The Flavours That Bring You  <span className="text-amber">Home</span> <br/>
-              {/* <span className="text-amber">Taste & Comfort</span> */}
+              The Flavours That Bring You <span className="text-amber">Home</span>
             </h1>
             <p className="text-lg md:text-xl text-espresso/80 leading-relaxed max-w-lg">
               From sizzling Pav Bhaji to refreshing Mojitos, experience the finest street food and cafe classics crafted with love.
@@ -64,7 +63,7 @@ export default function Home() {
       </section>
 
       {/* Bulk Order Section */}
-      <section id="bulkorder" className="relative group overflow-hidden pt-24 md:pt-32">
+      <section id="bulkorder" className="relative group overflow-hidden pt-24 md:pt-32 scroll-mt-24">
         {/* Slow Reveal Transition Div */}
         <div className="absolute top-0 left-0 w-full h-32 bg-linear-to-b from-cream to-transparent z-10 pointer-events-none" aria-hidden="true" />
         <Reveal threshold={0.15}>
@@ -82,7 +81,3 @@ export default function Home() {
     </div>
   );
 }
-
-
-    
-    
