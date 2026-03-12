@@ -1,7 +1,8 @@
-interface BulkOrderItem {
+export interface BulkOrderItem {
   id: string;
   title: string;
   description: string;
+  price?: string;
   image: string;
 }
 
@@ -25,6 +26,9 @@ export default function BulkOrderCard({ item }: BulkOrderCardProps) {
         <p className="text-charcoal/70 leading-relaxed grow italic">
           "{item.description}"
         </p>
+        {item.price && (
+          <p className="mt-4 font-bold text-sm uppercase tracking-widest text-amber">{item.price}</p>
+        )}
       </div>
     </div>
   );

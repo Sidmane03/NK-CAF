@@ -30,7 +30,7 @@ const menuData: MenuCategory[] = [
     id: 'burgers',
     category: 'Burgers',
     image: burgerImg,
-    imagePosition: 'center 40%', // Lift the image slightly
+    imagePosition: 'center 40%',
     items: [
       { name: 'Veg. Burger', price: 120},
       { name: 'Veg. Cheese Burger', price: 150},
@@ -55,7 +55,7 @@ const menuData: MenuCategory[] = [
     id: 'pizza',
     category: 'Pizza',
     image: pizzaImg,
-    imagePosition: 'center 50%', // Lift the image slightly
+    imagePosition: 'center 50%',
     items: [
       { name: 'Onion Capsicum Pizza', price: 230},
       { name: 'Paneer Tikka Pizza', price: 320},
@@ -111,7 +111,7 @@ const menuData: MenuCategory[] = [
     id: 'sandwich-toasties',
     category: 'Sandwich & Toasties',
     image: sandwichImg,
-    imagePosition: 'center 50%', // Lift the image slightly
+    imagePosition: 'center 50%',
     items: [
       { name: 'Bread Butter', price: 80 },
       { name: 'Bread Jam', price: 90 },
@@ -148,7 +148,7 @@ const menuData: MenuCategory[] = [
     id: 'lite-bites',
     category: 'Lite Bites',
     image: momoImg,
-    imagePosition: 'center 50%', // Lift the image slightly
+    imagePosition: 'center 50%',
     items: [
       { name: 'Hara Bhara Kebab (6pcs.)', price: 140 },
     { name: 'Veg. Momos (Fried)', price: 140 },
@@ -159,7 +159,7 @@ const menuData: MenuCategory[] = [
     id: 'hot-beverages',
     category: 'Hot Beverages',
     image: coffeeImg,
-    imagePosition: 'center 50%', // Lift the image slightly
+    imagePosition: 'center 50%',
     items: [
       { name: 'Adrak Wali Chai (200ml.)', price: 60 },
       { name: 'Hot Coffee (200ml.)', price: 70 },
@@ -181,7 +181,7 @@ const menuData: MenuCategory[] = [
     id: 'coffee-shakes',
     category: 'Coffee & Shakes',
     image: shakeImg,
-    imagePosition: 'center 40%', // Lift the image slightly
+    imagePosition: 'center 40%',
     items: [
       { name: 'Cold Coffee Regular', price: 90 },
       { name: 'Thick Cold Coffee', price: 60 },

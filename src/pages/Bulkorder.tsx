@@ -1,16 +1,8 @@
 import { Info, MessageCircle } from 'lucide-react';
-import BulkOrderCard from '../components/BulkOrderCard';
+import BulkOrderCard, { type BulkOrderItem } from '../components/BulkOrderCard';
 import sandwichImg from "../assets/images/sandwhich.avif";
 import pulaoImg from "../assets/images/pulao.avif";
 import pavBhajiImg from "../assets/images/pavbhaji.avif";
-
-interface BulkOrderItem {
-  id: string;
-  title: string;
-  description: string;
-  price: string;
-  image: string;
-}
 
 const bulkOrderItems: BulkOrderItem[] = [
   {
