@@ -1,6 +1,6 @@
 import { Utensils, ShoppingBag, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import hero4 from "../assets/images/hero2.avif";
+import heroImg from "../assets/images/hero2.avif";
 import Bulkorder from './Bulkorder';
 import About from './About';
 import Reveal from '../components/Reveal';
@@ -40,7 +40,7 @@ export default function Home() {
             {/* Main image container */}
             <div className="relative bg-cream rounded-4xl border-2 border-charcoal overflow-hidden aspect-4/5 shadow-hard-lg">
               <img 
-                src={hero4}
+                src={heroImg}
                 alt="Delicious Food at Nikhil's Kitchen" 
                 width={448}
                 height={560}

@@ -1,4 +1,4 @@
-import { useState, useCallback, useEffect } from 'react';
+import { useState, useCallback, useEffect, type ReactNode } from 'react';
 import { Coffee, ChevronLeft, ChevronRight } from 'lucide-react';
 import TestimonialCard from '../components/TestimonialCard';
 
@@ -47,7 +47,12 @@ const testimonials = [
   },
 ];
 
-const attributes = [
+interface Attribute {
+  icon?: ReactNode;
+  label: string;
+}
+
+const attributes: Attribute[] = [
   { icon: <Coffee aria-hidden="true" />, label: 'Small Batch Coffee' },
   { icon: <span aria-hidden="true">⭐</span>, label: 'Community Favorite' },
   { label: 'Established 2021' },
@@ -137,7 +142,7 @@ export default function About() {
         <div className="flex flex-wrap justify-center gap-12 py-10 border-y-2 border-charcoal/10">
           {attributes.map((item) => (
             <div key={item.label} className="flex items-center gap-3">
-              <span className="text-amber">{item.icon}</span>
+              {item.icon && <span className="text-amber">{item.icon}</span>}
               <span className="font-bold text-xs uppercase tracking-widest opacity-60 text-espresso">{item.label}</span>
             </div>
           ))}

@@ -7,7 +7,6 @@ interface TestimonialCardProps {
   foodRating?: number;
   serviceRating?: number;
   atmosphereRating?: number;
-  date?: string;
   initials?: string;
 }
 
