@@ -3,7 +3,13 @@
   X-Frame-Options: SAMEORIGIN
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
-  Permissions-Policy: camera=(), microphone=(), geolocation=(self)
+  Permissions-Policy: camera=(), microphone=(), geolocation=(self), payment=()
+  X-XSS-Protection: 0
+  Strict-Transport-Security: max-age=31536000; includeSubDomains
+  # style-src 'unsafe-inline' is required: React applies dynamic inline styles (e.g. backgroundImage) via DOM
+  # and Tailwind/Vite may inject style tags at runtime. CSP path-level matching is not supported for
+  # frame-src cross-origin frames, so https://www.google.com covers all Google Maps embed URLs.
+  Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: blob:; frame-src https://www.google.com; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'
 
 # Long-term cache for hashed Vite build assets
 /assets/*

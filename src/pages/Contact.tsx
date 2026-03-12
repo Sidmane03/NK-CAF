@@ -73,6 +73,8 @@ export default function Contact() {
               
               {/* Main Circular Map Container */}
               <div className="relative bg-cream rounded-full border-2 border-charcoal overflow-hidden w-full h-full shadow-hard transition-transform duration-500 group-hover:-translate-y-2 group-hover:shadow-hard-lg">
+                {/* Note: allow-scripts + allow-same-origin are both required for Google Maps interactivity;
+                    allow-popups enables "View on Google Maps" / directions links to open in a new tab. */}
                 <iframe
                   src={mapEmbedUrl}
                   width="100%"
@@ -81,6 +83,7 @@ export default function Contact() {
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
+                  sandbox="allow-scripts allow-same-origin allow-popups"
                   title="Nikhil's Kitchen Google Maps Location"
                   className="w-full h-full"
                 ></iframe>
