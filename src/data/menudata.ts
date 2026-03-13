@@ -26,6 +26,34 @@ export interface MenuCategory {
 }
 
 const menuData: MenuCategory[] = [
+   {
+    id: 'pavbhaji-special',
+    category: 'Pavbhaji Special',
+    image: pavbhajiImg,
+    items: [
+      { name: 'Pav Bhaji', price: 140 },
+      { name: 'Cheese Pav Bhaji', price: 230 },
+      { name: 'Amul Butter Pav Bhaji', price: 180 },
+      { name: 'Extra Pav Jodi', price: 20 },
+      { name: 'Extra Single Paav', price: 10 },
+      { name: 'Extra Bhaji Plate', price: 110 },
+      { name: 'Extra Bhaji per KG.', price: 500 },
+    ],
+  },
+  {
+    id: 'pulao',
+    category: 'Pulao',
+    image: pulaoImg,
+    items: [
+      { name: 'Veg. Tawa Pulao', price: 140 },
+      { name: 'Veg. Cheese Tawa Pulao', price: 180 },
+      { name: 'Amul Butter Tawa Pulao', price: 200 },
+      { name: 'Peas Tawa Pulao', price: 155 },
+      { name: 'Paneer Tawa Pulao', price: 170 },
+      { name: 'Paneer Cheese Tawa Pulao', price: 200 },
+      { name: 'Veg. Tawa Pulao (Per KG.)', price: 380 },
+    ],
+  },
   {
     id: 'burgers',
     category: 'Burgers',
@@ -66,34 +94,7 @@ const menuData: MenuCategory[] = [
       { name: 'Cheese Burst Pizza', price: 380, },
     ],
   },
-  {
-    id: 'pavbhaji-special',
-    category: 'Pavbhaji Special',
-    image: pavbhajiImg,
-    items: [
-      { name: 'Pav Bhaji', price: 140 },
-      { name: 'Cheese Pav Bhaji', price: 230 },
-      { name: 'Amul Butter Pav Bhaji', price: 180 },
-      { name: 'Extra Pav Jodi', price: 20 },
-      { name: 'Extra Single Paav', price: 10 },
-      { name: 'Extra Bhaji Plate', price: 110 },
-      { name: 'Extra Bhaji per KG.', price: 500 },
-    ],
-  },
-  {
-    id: 'pulao',
-    category: 'Pulao',
-    image: pulaoImg,
-    items: [
-      { name: 'Veg. Tawa Pulao', price: 140 },
-      { name: 'Veg. Cheese Tawa Pulao', price: 180 },
-      { name: 'Amul Butter Tawa Pulao', price: 200 },
-      { name: 'Peas Tawa Pulao', price: 155 },
-      { name: 'Paneer Tawa Pulao', price: 170 },
-      { name: 'Paneer Cheese Tawa Pulao', price: 200 },
-      { name: 'Veg. Tawa Pulao (Per KG.)', price: 380 },
-    ],
-  },
+ 
   {
     id: 'maggie-delight',
     category: 'Maggie Delight',
