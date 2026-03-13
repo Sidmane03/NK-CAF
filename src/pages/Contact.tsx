@@ -19,7 +19,7 @@ export default function Contact() {
       <div className="max-w-5xl mx-auto relative z-10">
         <SectionHeader
           title="Contact & Visit Us"
-          subtitle="Drop by to enjoy our cozy ambiance and delicious food. We can't wait to host you!"
+          subtitle=""
         />
 
         <div className="card-artisanal p-8 md:p-12 bg-sand/50 backdrop-blur-sm flex flex-col md:flex-row gap-12 items-center">

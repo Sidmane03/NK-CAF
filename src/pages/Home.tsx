@@ -1,9 +1,9 @@
 import { Utensils, ShoppingBag, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import hero4 from "../assets/images/hero2.avif";
 import Bulkorder from './Bulkorder';
 import About from './About';
 import Reveal from '../components/Reveal';
+import HeroImageTransition from '../components/HeroImageTransition';
 
 export default function Home() {
   return (
@@ -24,7 +24,7 @@ export default function Home() {
             </p>
             
             <div className="flex flex-wrap gap-4 pt-4">
-              <a href="#bulkorder" className="btn-artisanal rounded-full px-8 py-4 text-lg inline-flex items-center gap-2 hover:bg-amber-hover transition-all">
+              <a href="#bulkorder" className="btn-artisanal rounded-full px-8 py-4 text-lg bg-cream hover:bg-sand inline-flex items-center gap-2">
                 Bulk Order <ShoppingBag className="w-5 h-5" />
               </a>
               <Link to="/menu" className="btn-artisanal rounded-full px-8 py-4 text-lg bg-cream hover:bg-sand inline-flex items-center gap-2">
@@ -34,30 +34,8 @@ export default function Home() {
           </Reveal>
 
           {/* Decorative Image Frame */}
-          <Reveal className="relative max-w-md mx-auto lg:ml-auto w-full mt-8 lg:mt-0" threshold={0.05}>
-            {/* Offset solid background */}
-            <div className="absolute inset-0 bg-amber rounded-4xl border-2 border-charcoal translate-x-6 translate-y-6" aria-hidden="true"></div>
-            {/* Main image container */}
-            <div className="relative bg-cream rounded-4xl border-2 border-charcoal overflow-hidden aspect-4/5 shadow-hard-lg">
-              <img 
-                src={hero4}
-                alt="Delicious Food at Nikhil's Kitchen" 
-                width={448}
-                height={560}
-                fetchPriority="high"
-                className="w-full h-full object-cover"  
-              />
-            </div>
-            {/* Floating Element */}
-            <div className="absolute -bottom-6 -left-6 bg-cream border-2 border-charcoal p-4 rounded-xl shadow-hard flex items-center gap-4">
-              <div className="w-12 h-12 bg-sand rounded-full border-2 border-charcoal flex items-center justify-center text-2xl">
-                🔥
-              </div>
-              <div>
-                <div className="font-bold">Hot & Fresh</div>
-                <div className="text-sm opacity-80">Served daily</div>
-              </div>
-            </div>
+          <Reveal className="h-full flex items-center justify-center w-full" threshold={0.05}>
+            <HeroImageTransition />
           </Reveal>
         </div>
       </section>

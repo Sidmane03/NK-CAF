@@ -92,4 +92,44 @@ html {
     scrollbar-width: thin;
     scrollbar-color: rgba(48, 45, 42, 0.2) transparent;
   }
+
+  /* Card Stack transitions for Hero image */
+  .hero-card-base {
+    @apply absolute inset-0 w-full h-full object-cover rounded-4xl border-2 border-charcoal bg-cream;
+  }
+  
+  .hero-card-top {
+    transform: translate(0, 0);
+    z-index: 20;
+    opacity: 1;
+    transition: transform 1.2s cubic-bezier(0.25, 1, 0.5, 1), opacity 1.2s ease, box-shadow 0.5s ease;
+    box-shadow: var(--shadow-hard-lg);
+  }
+  
+  .hero-card-bottom {
+    transform: translate(1.5rem, 1.5rem);
+    z-index: 10;
+    opacity: 1;
+    transition: transform 1.2s cubic-bezier(0.25, 1, 0.5, 1);
+    box-shadow: none;
+  }
+  
+  .hero-card-exit {
+    transform: translate(-3rem, -3rem) rotate(-5deg);
+    z-index: 30;
+    opacity: 0;
+    transition: transform 1.2s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.8s ease;
+    box-shadow: var(--shadow-hard-lg);
+  }
+  
+  .hero-card-hidden {
+    transform: translate(1.5rem, 1.5rem);
+    z-index: 0;
+    opacity: 0;
+    transition: none; /* Instant reset */
+  }
+
+  .hero-transition-smooth {
+    transition: all 1.2s cubic-bezier(0.25, 1, 0.5, 1);
+  }
 }
