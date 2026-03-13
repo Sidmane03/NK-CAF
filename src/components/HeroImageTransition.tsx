@@ -17,7 +17,7 @@ const heroItems = [
     alt: "Refreshing Beverages",
     badgeIcon: "❄️",
     badgeTitle: "Cool Drinks",
-    badgeSubtitle: "Made to order"
+    badgeSubtitle: "refreshing "
   },
   {
     image: ch,
