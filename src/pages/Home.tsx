@@ -14,7 +14,7 @@ export default function Home() {
           <Reveal className="space-y-8 z-10" threshold={0.05}>
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border-2 border-charcoal bg-cream font-bold text-sm shadow-hard-sm">
               <Utensils className="w-4 h-4 text-amber" />
-              Welcome to Nikhil's Kitchen
+              Pure taste. Every time
             </div>
             <h1 className="text-5xl md:text-7xl font-serif font-medium leading-[1.1]">
               The Flavours That Bring You <span className="text-amber">Home</span>

@@ -1,4 +1,4 @@
-import { MapPin, Clock, Phone, ExternalLink } from 'lucide-react';
+import { MapPin, Clock, Phone, ExternalLink, Instagram } from 'lucide-react';
 import SectionHeader from '../components/SectionHeader';
 import ContactInfoBlock from '../components/ContactInfoBlock';
 
@@ -59,6 +59,20 @@ export default function Contact() {
                 <p className="opacity-80 leading-relaxed text-xl">
                   <a href="tel:+917499059843" className="hover:text-amber transition-colors font-serif italic">
                     +91 74990 59843
+                  </a>
+                </p>
+              </ContactInfoBlock>
+
+              {/* Instagram Block */}
+              <ContactInfoBlock icon={<Instagram className="w-6 h-6 text-charcoal" />} title="Instagram">
+                <p className="opacity-80 leading-relaxed text-xl">
+                  <a 
+                    href="https://www.instagram.com/nikhilspavbhajicafe/" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="hover:text-amber transition-colors font-serif italic"
+                  >
+                    @nikhilspavbhajicafe
                   </a>
                 </p>
               </ContactInfoBlock>

@@ -65,7 +65,7 @@ const Navbar = () => {
           />
 
   <span className="font-serif text-xl md:text-2xl tracking-tight">
-    Nikhil's Kitchen
+    Nikhil's Kitchen Pav Bhaji & Cafe
   </span>
 </Link>
 

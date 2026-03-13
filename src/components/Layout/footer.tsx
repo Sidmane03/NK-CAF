@@ -46,6 +46,7 @@ const Footer = () => {
         </div>
       </div>
       
+      
       <div className="max-w-7xl mx-auto mt-12 pt-8 border-t border-cream/20 text-center md:text-left flex flex-col md:flex-row justify-between items-center gap-4">
         <p className="text-sm opacity-80">
           &copy; {new Date().getFullYear()} Nikhil's Kitchen. All rights reserved.
