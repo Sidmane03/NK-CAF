@@ -1,7 +1,8 @@
 import { useState, useEffect, useCallback } from "react";
 import { NavLink, Link, useNavigate, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
-import logo from "../../assets/icons/logo.svg";
+import Logo from "./Logo";
+
 
 // Pure function — outside the component so it's never recreated on re-renders
 const navLinkStyles = ({ isActive }: { isActive: boolean }) =>
@@ -58,16 +59,15 @@ const Navbar = () => {
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         {/* Brand */}
-        <Link to="/" className="flex items-center gap-3">
-          <img
-            src={logo}
-            alt="Nikhil's Kitchen"
-            width={40}
-            height={40}
-            className={`transition-all duration-300 ${scrolled ? "h-8" : "h-10"}`}
+        <Link to="/" className="flex items-center gap-1.5 md:gap-2">
+          <Logo
+            className={`transition-all duration-300 w-auto ${scrolled ? "h-8" : "h-10"}`}
           />
-          <span className="font-serif text-xl md:text-2xl tracking-tight">Nikhil's Kitchen</span>
-        </Link>
+
+  <span className="font-serif text-xl md:text-2xl tracking-tight">
+    Nikhil's Kitchen
+  </span>
+</Link>
 
         {/* Desktop Nav */}
         <nav aria-label="Primary navigation" className="hidden md:flex items-center gap-8 text-sm font-medium">

@@ -3,10 +3,11 @@ import SectionHeader from '../components/SectionHeader';
 import ContactInfoBlock from '../components/ContactInfoBlock';
 
 export default function Contact() {
-  const mapEmbedUrl = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3780.4688662437698!2d73.7562064!3d18.6429446!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2b98295527b1d%3A0x6205cf7a13870c80!2sNikhil&#39;s%20Kitchen%20Pav%20Bhaji%20%26%20Cafe!5e0!3m2!1sen!2sin!4v1772827324332!5m2!1sen!2sin";
-  const googleMapsUrl = "https://www.google.com/maps/place/Nikhil's+Kitchen+Pav+Bhaji+%26+Cafe/@18.6429446,73.7562064,17z/data=!4m6!3m5!1s0x3bc2b98295527b1d:0x6205cf7a13870c80!8m2!3d18.6429446!4d73.7562064!16s%2Fg%2F11y3lypzkv?entry=ttu";
-
-  return (
+      const mapEmbedUrl =
+      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3780.4688662437698!2d73.7562064!3d18.6429446!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2b98295527b1d%3A0x6205cf7a13870c80!2sNikhil%27s%20Kitchen%20Pav%20Bhaji%20%26%20Cafe!5e0!3m2!1sen!2sin!4v1773330415249!5m2!1sen!2sin";
+      const googleMapsUrl =
+      "https://www.google.com/maps/search/?api=1&query=Nikhil's+Kitchen+Pav+Bhaji+%26+Cafe+Ravet+Pune";
+  return (      
     <section className="relative py-20 px-6 bg-cream min-h-screen overflow-hidden">
       {/* Background Texture Overlay */}
       <div 

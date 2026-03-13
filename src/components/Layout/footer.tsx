@@ -1,7 +1,8 @@
 
 import { Phone, MapPin } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import logo from '../../assets/icons/logo.svg';
+
+import Logo from "./Logo";
 
 const Footer = () => {
   return (
@@ -11,10 +12,8 @@ const Footer = () => {
         <div className="flex flex-col gap-4">
           
           <Link to="/" className="flex items-center gap-3">
-          <img
-            src={logo}
-            alt="Nikhil's Kitchen Logo"
-            className="h-10"
+          <Logo
+            className={`h-10`}
           />
             <span className="font-serif text-2xl font-bold tracking-tight">Nikhil's Kitchen</span>
           </Link>
@@ -30,7 +29,7 @@ const Footer = () => {
             <Link to="/" className="hover:text-amber transition-colors w-fit">Home</Link>
             <Link to="/menu" className="hover:text-amber transition-colors w-fit">Menu</Link>
             <Link to="/#testimonials" className="hover:text-amber transition-colors w-fit">Testimonials</Link>
-            <Link to="/order" className="hover:text-amber transition-colors w-fit">Order Online</Link>
+            <Link to="/Order" className="hover:text-amber transition-colors w-fit">Order Online</Link>
           </nav>
         </div>
 

@@ -5,6 +5,8 @@ import Menu from './pages/Menu';
 import Contact from './pages/Contact';
 import NotFound from './pages/NotFound';
 import Order from './pages/Order';
+
+
 const router = createBrowserRouter([
   {
     path: '/',
