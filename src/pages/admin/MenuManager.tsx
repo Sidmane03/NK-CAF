@@ -1,4 +1,4 @@
-import { useEffect, useState, useCallback } from 'react';
+import { useEffect, useState } from 'react';
 import { supabase } from '../../lib/supabase';
 import type { MenuCategory, MenuItem } from '../../types/menu';
 import {
@@ -28,49 +28,65 @@ export default function MenuManager() {
   const [feedback, setFeedback] = useState<{ id: string; type: 'ok' | 'err'; msg: string } | null>(null);
   const [newItem, setNewItem] = useState<Record<string, { name: string; price: string }>>({});
   const [confirmDelete, setConfirmDelete] = useState<string | null>(null);
-  
+  const [refreshKey, setRefreshKey] = useState(0);
+
   // Category Image States
   const [catImageDrafts, setCatImageDrafts] = useState<Record<string, string>>({});
   const [savingCat, setSavingCat] = useState<Record<string, boolean>>({});
-
-  /* ─── Fetch data ─── */
-  const fetchMenu = useCallback(async () => {
-    const { data, error } = await supabase
-      .from('menu_categories')
-      .select('*, items:menu_items(*)')
-      .order('display_order', { ascending: true });
-
-    if (error) {
-      showFeedback('', 'err', error.message);
-    } else {
-      const cats = (data ?? []).map((cat: MenuCategory) => ({
-        ...cat,
-        items: (cat.items ?? []).sort((a: MenuItem, b: MenuItem) => a.display_order - b.display_order),
-      }));
-      setCategories(cats);
-
-      // Seed drafts for every item and category image
-      const d: Record<string, ItemDraft> = {};
-      const imgD: Record<string, string> = {};
-      cats.forEach((cat: MenuCategory) => {
-        imgD[cat.id] = cat.image_url ?? '';
-        cat.items.forEach((item: MenuItem) => {
-          d[item.id] = { name: item.name, price: String(item.price), is_active: item.is_active };
-        });
-      });
-      setDrafts(d);
-      setCatImageDrafts(imgD);
-    }
-    setLoading(false);
-  }, []);
-
-  useEffect(() => { fetchMenu(); }, [fetchMenu]);
 
   /* ─── Helpers ─── */
   function showFeedback(id: string, type: 'ok' | 'err', msg: string) {
     setFeedback({ id, type, msg });
     setTimeout(() => setFeedback(null), 3000);
   }
+
+  /** Trigger a re-fetch from mutation handlers (save/delete/add). */
+  function fetchMenu() {
+    setRefreshKey((k) => k + 1);
+  }
+
+  /* ─── Fetch data ─── */
+  useEffect(() => {
+    let cancelled = false;
+
+    async function load() {
+      setLoading(true);
+      const { data, error } = await supabase
+        .from('menu_categories')
+        .select('*, items:menu_items(*)')
+        .order('display_order', { ascending: true });
+
+      if (cancelled) return;
+
+      if (error) {
+        showFeedback('', 'err', error.message);
+      } else {
+        const cats = (data ?? []).map((cat: MenuCategory) => ({
+          ...cat,
+          items: (cat.items ?? []).sort((a: MenuItem, b: MenuItem) => a.display_order - b.display_order),
+        }));
+        setCategories(cats);
+
+        // Seed drafts for every item and category image
+        const d: Record<string, ItemDraft> = {};
+        const imgD: Record<string, string> = {};
+        cats.forEach((cat: MenuCategory) => {
+          imgD[cat.id] = cat.image_url ?? '';
+          cat.items.forEach((item: MenuItem) => {
+            d[item.id] = { name: item.name, price: String(item.price), is_active: item.is_active };
+          });
+        });
+        setDrafts(d);
+        setCatImageDrafts(imgD);
+      }
+      setLoading(false);
+    }
+
+    load();
+    // `cancelled` prevents stale results from updating state after unmount.
+    // The in-flight request still completes but its result is discarded.
+    return () => { cancelled = true; };
+  }, [refreshKey]);
 
   function toggleExpand(catId: string) {
     setExpanded((p) => ({ ...p, [catId]: !p[catId] }));
